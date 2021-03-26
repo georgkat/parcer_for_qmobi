@@ -36,7 +36,7 @@ def some_error(error_number, ex):
     Вызывается из except, принимает ожидаемый error_number (список в словаре error_dict выше) и exception в ex
     Ничего не возвращает, но записывает полученные ошибки в список error_message
     :param error_number: string
-    :param ex: string
+    :param ex: Exception of some class
     """
     error_number = str(error_number)  # на случай, если ошибка пришла числом, а не строкой
     error_type = error_dict[error_number]  # извлекает из словаря тип ошибки
@@ -88,6 +88,7 @@ def json_maker(filename, data):
     Сохраняет словарь в json
     Принимает имя файла filename и словарь data
     Создаёт файл и сохраняет в него словарь
+    В данном случае возвращается {"RUB": хххх.хх, "USD/RUB": хх.хххх, "USD": хххх.хх}
     NB Есть стандартная библиотека json, но тут всего одна задача
     :param filename: string
     :param data: dictionary
