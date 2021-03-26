@@ -1,9 +1,11 @@
 # parcer_for_qmobi
-Test project for qmobi<br>
-run main.py<br>
+
+Состоит из двух частей:<br>
+main.py - отвечает за подъем локального сервера (по умолчанию 127.0.0.1, порт 8000)<br>
+cgi-bin/exchange.py - конвертер валют из рублей в доллары и обратно, может сохранять результат в формате .json<br>
 <br>
-main.py raises server<br>
-exchange.py executes cgi and build's page<br>
+Написан на python 3.9<br>
+Используются стандартные библиотеки python:<br>
+http.server, webbrowser, datetime, cgi, cgitb, urllib.request, datetime, html, html.parser<br>
 <br>
-tested on win10 + pycharm + chrome &<br>
-mac os catalina + pycharm + chrome
+Проверен на mac os catalina + pycharm + chrome и windows 10 + pycharm + chrome
