@@ -23,7 +23,7 @@ try:
     webbrowser.open_new_tab(script)  # запускаю скрипт в браузере
     httpd.serve_forever()  # оставляю сервер работать
 except Exception as ex:
-    message = f'Cannot raise server, got: {ex}'
+    print(f'Cannot raise server, got: {ex}')
     now = datetime.datetime.now()
     log_line = f'{now} || -1 || Cannot raise server || {ex} \n'
     log = open('error.log', 'a')  # создает/открывает файл лога ошибок
