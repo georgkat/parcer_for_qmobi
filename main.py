@@ -19,8 +19,14 @@ try:
 
     print('IP:', sa[0], 'PORT:', sa[1])
     script = 'http://' + str(sa[0]) + ':' + str(sa[1]) + '/cgi-bin/exchange.py'  # формирую ссылку на скрипт обменника
-
-    webbrowser.open_new_tab(script)  # запускаю скрипт в браузере
+    try:
+        webbrowser.open_new_tab(script)  # запускаю скрипт в браузере
+    except Exception as ex:
+        print(f'Cannot open browser, got: {ex}')
+        now = datetime.datetime.now()
+        log_line = f'{now} || -2 || Cannot open browser || {ex} \n'
+        log = open('error.log', 'a')  # создает/открывает файл лога ошибок
+        log.write('log_line')  # записывает ошибку в лог ошибок
     httpd.serve_forever()  # оставляю сервер работать
 except Exception as ex:
     print(f'Cannot raise server, got: {ex}')
